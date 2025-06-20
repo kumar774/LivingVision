@@ -2,23 +2,18 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Serve static files from /public
 app.use(express.static('public'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-const villas = [
-  { id: 1, name: 'Grand Sereno', location: 'Siolim', price: '2.5 Cr', phone: '+919897070228' },
-  { id: 2, name: 'Casa Tropica', location: 'Assagao', price: '3.1 Cr', phone: '+919897070228' }
-];
-
+// Basic route
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/api/villas', (req, res) => {
-  res.json(villas);
+app.get('/grand-sereno-details', (req, res) => {
+  res.sendFile(__dirname + '/public/grand-sereno-details.html');
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`✅ Server running on http://localhost:${PORT}`);
 });
