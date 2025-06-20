@@ -1,0 +1,12 @@
+{
+  "name": "livining-vision",
+  "version": "1.0.0",
+  "description": "Dynamic villa listing site for Livining Vision.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
