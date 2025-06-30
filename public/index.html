@@ -9,32 +9,67 @@
       body {
         background: #f1f4f9;
         color: #222;
+        margin: 0;
       }
+
       .hero {
-        background-image: url('attached_assets/main_banner.jpg') ;
+        background-image: url('attached_assets/main_banner.jpg');
         background-size: cover;
         background-position: center;
-        padding: 6rem 1rem;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         color: white;
-        border-radius: 1rem;
+        position: relative;
       }
+
       .glass {
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(12px);
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
         border-radius: 1rem;
-        padding: 2rem;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        padding: 3rem 2rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 90%;
       }
+
       .neumorph {
         box-shadow: 9px 9px 16px #d1d9e6, -9px -9px 16px #ffffff;
         border-radius: 1rem;
-        padding: 1.5rem;
+        padding: 1rem;
       }
+
       .villa-img {
         width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
         border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .villa-card {
+        padding: 1rem;
+        border-radius: 1rem;
+        background: white;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s;
+      }
+
+      .villa-card:hover {
+        transform: translateY(-5px);
+      }
+
+      @media (min-width: 768px) {
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 2rem;
+        }
       }
     </style>
   </head>
@@ -48,26 +83,26 @@
       </ul>
     </nav>
 
-    <main class="container">
+    <main>
       <div class="hero">
         <div class="glass">
           <h1>Luxury Villas And Property in Goa</h1>
           <p>Your dream home is just a step away</p>
-          <a href="#listing" role="button">More</a>
+          <a href="#listing" role="button">Explore Villas</a>
         </div>
       </div>
 
-      <section id="about" class="grid">
+      <section id="about" class="container">
         <article class="neumorph">
           <h2>About Us</h2>
           <p>Livining Vision is a premium villa and property development company offering luxurious villas nestled in the beauty of Siolim, Goa. Our properties merge nature with timeless design, offering you both elegance and comfort.</p>
         </article>
       </section>
 
-      <section id="listing">
+      <section id="listing" class="container">
         <h2>Villa Listings</h2>
         <div class="grid">
-          <article class="neumorph" style="cursor: pointer;" onclick="window.location.href='grand-sereno-details.html'">
+          <article class="villa-card" onclick="window.location.href='grand-sereno-details.html'">
             <img src="attached_assets/Grand sereno Brochure_pages-to-jpg-0004.jpg" alt="Grand Sereno Villa" class="villa-img" />
             <h3>Grand Sereno</h3>
             <p>Luxurious 4/5 BHK villas with private pools, located in Nagoa, Goa.</p>
@@ -77,11 +112,11 @@
               <a href="tel:+919897070228" role="button" onclick="event.stopPropagation()">Call Now</a>
             </p>
           </article>
-          <!-- Additional villas can be added in same pattern -->
+          <!-- Add more villas here -->
         </div>
       </section>
 
-      <section id="gallery">
+      <section id="gallery" class="container">
         <h2>Gallery</h2>
         <div class="grid">
           <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1000&q=80" class="villa-img" alt="Living Room" />
@@ -89,19 +124,17 @@
         </div>
       </section>
 
-      <section id="contact" aria-label="Contact">
-        <div class="container">
-          <article class="neumorph">
-            <hgroup>
-              <h2>Contact Us</h2>
-              <h3>We’d love to hear from you</h3>
-            </hgroup>
-            <p><strong>Phone:</strong> +91 98970 70228</p>
-            <p><strong>WhatsApp:</strong> +91 98970 70229</p>
-            <p><strong>Email:</strong> aniltalwar226@gmail.com</p>
-            <p><strong>Address:</strong> Random, Siolim, Goa</p>
-          </article>
-        </div>
+      <section id="contact" class="container">
+        <article class="neumorph">
+          <hgroup>
+            <h2>Contact Us</h2>
+            <h3>We’d love to hear from you</h3>
+          </hgroup>
+          <p><strong>Phone:</strong> +91 98970 70228</p>
+          <p><strong>WhatsApp:</strong> +91 98970 70229</p>
+          <p><strong>Email:</strong> aniltalwar226@gmail.com</p>
+          <p><strong>Address:</strong> Random, Siolim, Goa</p>
+        </article>
       </section>
     </main>
 
