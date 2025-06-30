@@ -26,15 +26,50 @@
         padding: 2rem;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       }
-      .neumorph {
-        box-shadow: 9px 9px 16px #d1d9e6, -9px -9px 16px #ffffff;
-        border-radius: 1rem;
-        padding: 1.5rem;
+      .villa-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 1.5rem;
       }
-      .villa-img {
+      .villa-card {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        padding: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.17s, box-shadow 0.17s;
+        cursor: pointer;
+      }
+      .villa-card:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.13);
+      }
+      .villa-card .villa-img {
         width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        height: 170px;
+        object-fit: cover;
+        border-radius: 0.7rem;
+        margin-bottom: 0.7rem;
+      }
+      .villa-card h3 {
+        margin: 0.6rem 0 0.2rem 0;
+        font-size: 1.2rem;
+      }
+      .villa-card p {
+        margin: 0.2rem 0;
+        font-size: 1rem;
+        text-align: center;
+      }
+      .villa-card a[role="button"] {
+        margin: 0 0.2rem;
+      }
+      @media (max-width: 600px) {
+        .villa-card .villa-img {
+          height: 120px;
+        }
       }
     </style>
   </head>
@@ -60,30 +95,40 @@
       <section id="about" class="grid">
         <article class="neumorph">
           <h2>About Us</h2>
-          <p>Livining Vision is a premium villa and property development company offering luxurious villas nestled in the beauty of Siolim, Goa. Our properties merge nature with timeless design, offering you both elegance and comfort.</p>
+          <p>Livining Vision is a premium villa and property development company offering luxurious villas nestled in the beauty of Siolim, Goa. Our properties merge nature with timeless design, offering a serene lifestyle for discerning buyers.</p>
         </article>
       </section>
 
       <section id="listing">
         <h2>Villa Listings</h2>
-        <div class="grid">
-          <article class="neumorph" style="cursor: pointer;" onclick="window.location.href='grand-sereno-details.html'">
+        <div class="villa-grid">
+          <article class="villa-card" onclick="window.location.href='grand-sereno-details.html'">
             <img src="attached_assets/Grand sereno Brochure_pages-to-jpg-0004.jpg" alt="Grand Sereno Villa" class="villa-img" />
             <h3>Grand Sereno</h3>
             <p>Luxurious 4/5 BHK villas with private pools, located in Nagoa, Goa.</p>
-            <p>Starting from ₹2.5 Crores*</p>
             <p>
               <a href="grand-sereno-details.html" role="button">View Details</a>
               <a href="tel:+919897070228" role="button" onclick="event.stopPropagation()">Call Now</a>
             </p>
           </article>
-          <!-- Additional villas can be added in same pattern -->
+          <!-- Add more villa-card articles below for more listings, follow the same structure -->
+          <!-- Example for another villa:
+          <article class="villa-card" onclick="window.location.href='villa2-details.html'">
+            <img src="attached_assets/villa2.jpg" alt="Villa 2" class="villa-img" />
+            <h3>Villa Bliss</h3>
+            <p>Modern 3 BHK villa, surrounded by greenery and peace in Siolim, Goa.</p>
+            <p>
+              <a href="villa2-details.html" role="button">View Details</a>
+              <a href="tel:+919897070228" role="button" onclick="event.stopPropagation()">Call Now</a>
+            </p>
+          </article>
+          -->
         </div>
       </section>
 
       <section id="gallery">
         <h2>Gallery</h2>
-        <div class="grid">
+        <div class="villa-grid">
           <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1000&q=80" class="villa-img" alt="Living Room" />
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" class="villa-img" alt="Pool View" />
         </div>
