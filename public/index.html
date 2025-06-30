@@ -7,35 +7,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
     <style>
       body {
+        margin: 0;
         background: #f1f4f9;
         color: #222;
-        margin: 0;
       }
 
       .hero {
-        background-image: url('attached_assets/main_banner.png');
+        background-image: url('attached_assets/main_banner.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: 100vh;
         width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        position: relative;
-      }
-
-      .glass {
-        display:none;
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(8px);
-        border-radius: 1rem;
-        padding: 3rem 2rem;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        max-width: 600px;
-        width: 90%;
       }
 
       .neumorph {
@@ -46,7 +29,6 @@
 
       .villa-img {
         width: 100%;
-        height: auto;
         max-height: 200px;
         object-fit: cover;
         border-radius: 12px;
@@ -72,7 +54,6 @@
           gap: 2rem;
         }
       }
-     
     </style>
   </head>
   <body>
@@ -85,15 +66,10 @@
       </ul>
     </nav>
 
-    <main>
-      <div class="hero">
-        <div style="display:none;" class="glass">
-          <h1>Luxury Villas And Property in Goa</h1>
-          <p>Your dream home is just a step away</p>
-          <a href="#listing" role="button">Explore Villas</a>
-        </div>
-      </div>
+    <!-- ✅ Hero section with only full-screen banner image -->
+    <div class="hero"></div>
 
+    <main>
       <section id="about" class="container">
         <article class="neumorph">
           <h2>About Us</h2>
@@ -114,7 +90,6 @@
               <a href="tel:+919897070228" role="button" onclick="event.stopPropagation()">Call Now</a>
             </p>
           </article>
-          <!-- Add more villas here -->
         </div>
       </section>
 
