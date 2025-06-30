@@ -12,25 +12,31 @@
         color: #222;
       }
 
-     .hero {
-  background-image: url('attached_assets/main_banner.png');
+    .hero {
+  background-image: url('attached_assets/main_banner.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
+  border-radius: 1rem; /* 👈 Radius added */
+  overflow: hidden;
+  margin: 1rem auto;
+  max-width: 1200px; /* Optional: for desktop alignment */
 }
 
-/* 👇 Mobile ke liye image crop na ho */
+/* 👇 Mobile fix: contain instead of cover */
 @media (max-width: 600px) {
   .hero {
     background-size: contain;
     background-position: top center;
     background-repeat: no-repeat;
-    height: 33vh;
+    height: 100vh;
     width: 100vw;
+    border-radius: 1rem;
   }
 }
+
 
 
       .neumorph {
