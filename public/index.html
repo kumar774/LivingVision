@@ -80,6 +80,26 @@
         padding: 1rem;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       }
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.video-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+  object-fit: cover;
+}
 
     </style>
   </head>
@@ -150,7 +170,7 @@
         Farm House Coming Soon...
       </div>
     </div>
-
+<br>
     <!-- 🏡 Image 2 -->
     <div class="glass" style="position: relative; overflow: hidden;">
       <img src="attached_assets/upcoming2.jpeg" class="villa-img" alt="Farm Project 2" />
@@ -176,7 +196,26 @@
   </div>
 </section>
 
+<section id="video-gallery" class="container">
+  <h2>Gallery</h2>
+  <div class="video-grid">
 
+    <!-- 🔁 Video Block 1 -->
+    <div class="video-card">
+      <video
+        src="attached_assets/gallery_1v.mp4"
+        muted
+        playsinline
+        loop
+        preload="none"
+        class="gallery-video"
+      ></video>
+    </div>
+
+    <!-- ✅ Future videos: copy-paste more .video-card blocks like this -->
+    
+  </div>
+</section>
       <section id="contact" class="container">
         <article class="neumorph">
           <hgroup>
@@ -190,7 +229,28 @@
         </article>
       </section>
     </main>
+<script>
+  // Auto-play when in view
+  const videos = document.querySelectorAll('.gallery-video');
 
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  videos.forEach(video => {
+    observer.observe(video);
+  });
+</script>
     <footer class="container">
       <small><a href="#">© Livining Vision</a> • <a href="#">All rights reserved</a></small>
     </footer>
