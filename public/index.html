@@ -81,14 +81,14 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       }
 .video-gallery-container {
-  max-width: 400px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ✅ updated */
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -98,9 +98,9 @@
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  height: 300px;
   display: flex;
   flex-direction: column;
-  height: 420px;
 }
 
 .gallery-video {
@@ -109,6 +109,7 @@
   object-fit: cover;
   display: block;
 }
+
 
 
 
@@ -213,11 +214,11 @@
 
   <div class="video-gallery-container">
     <div class="video-grid">
-    
-      <!-- 🎬 Video Card -->
+      
+      <!-- 🎬 Video 1 -->
       <div class="video-card">
         <video
-          src="attached_assets/gallery_1v.mp4"
+          src="attached_assets/WhatsApp Video 2025-07-01 at 10.52.38 AM.mp4"
           muted
           playsinline
           loop
@@ -226,10 +227,10 @@
         ></video>
       </div>
 
-      <!-- 🆕 Add more cards here if needed -->
- <div class="video-card">
+      <!-- 🎬 Video 2 -->
+      <div class="video-card">
         <video
-          src="attached_assets/gallery_1v.mp4"
+          src="attached_assets/another-video.mp4"
           muted
           playsinline
           loop
@@ -237,9 +238,11 @@
           class="gallery-video"
         ></video>
       </div>
+
     </div>
   </div>
 </section>
+
 
       <section id="contact" class="container">
         <article class="neumorph">
