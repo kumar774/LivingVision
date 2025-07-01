@@ -80,6 +80,12 @@
         padding: 1rem;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       }
+.video-gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -94,7 +100,7 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  height: 320px; /* Fixed height for consistency */
+  height: 320px;
 }
 
 .gallery-video {
@@ -103,6 +109,7 @@
   object-fit: cover;
   display: block;
 }
+
 
 
 
@@ -201,26 +208,30 @@
   </div>
 </section>
 
-<section id="video-gallery" class="container">
-  <h2>Gallery</h2>
-  <div class="video-grid">
+<section id="video-gallery">
+  <h2 style="text-align: center;">Gallery</h2>
 
-    <!-- 🔁 Video Block 1 -->
-    <div class="video-card">
-      <video
-        src="attached_assets/gallery_1v.mp4"
-        muted
-        playsinline
-        loop
-        preload="none"
-        class="gallery-video"
-      ></video>
-    </div>
-
-    <!-- ✅ Future videos: copy-paste more .video-card blocks like this -->
+  <div class="video-gallery-container">
+    <div class="video-grid">
     
+      <!-- 🎬 Video Card -->
+      <div class="video-card">
+        <video
+          src="attached_assets/gallery_1v.mp4"
+          muted
+          playsinline
+          loop
+          preload="none"
+          class="gallery-video"
+        ></video>
+      </div>
+
+      <!-- 🆕 Add more cards here if needed -->
+
+    </div>
   </div>
 </section>
+
       <section id="contact" class="container">
         <article class="neumorph">
           <hgroup>
